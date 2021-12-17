@@ -1,0 +1,45 @@
+<div class="submit-form">
+
+    <!--  <div *ngIf="!submitted"> -->
+
+    <div class="form-group">
+        <h3 class="text-muted">Jahr</h3>
+        <input [attr.disabled]="disabled ? '' : null" type="text" style="width:30%" class="form-control" id="year" [(ngModel)]="doorData.year" required name="year" />
+    </div>
+
+    <div class="form-group">
+        <h3 class="text-muted">Nummer</h3>
+        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="number" [(ngModel)]="doorData.number" required name="number" />
+    </div>
+
+    <div class="form-group">
+        <h3 class="text-muted">Hinweis</h3>
+        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="hint" [(ngModel)]="doorData.hint" required name="hint" />
+    </div>
+
+    <div class="form-group">
+        <h3 class="text-muted">NKTYP</h3>
+        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="nktip" [(ngModel)]="doorData.nktip" required name="nktip" />
+    </div>
+
+    <div class="form-group">
+        <h3 class="text-muted">TYP</h3>
+        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="typ" [(ngModel)]="doorData.typ" required name="typ" />
+    </div>
+
+    <div class="form-group">
+        <h3 class="text-muted">DIN</h3>
+        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="din" [(ngModel)]="doorData.din" required name="din" />
+    </div>
+
+    <button [attr.disabled]="disabled ? '' : null" (click)="saveDoor()" class="btn btn-success btn-lg">Hinzufügen</button>
+</div>
+
+
+
+
+<div *ngIf="buttonCheck">
+    <h2><br>Tür wurde erfolgreich hinzugefügt</h2>
+    <button (click)="releaseInputs()" class="btn btn-secondary btn-lg mr-1">Neue Tür hinzufügen</button>
+    <button routerLink="/costumers" class="btn btn-primary btn-lg">Startseite</button>
+</div>

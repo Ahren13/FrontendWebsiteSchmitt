@@ -1,0 +1,36 @@
+<div class="submit-form">
+    <!--  <div *ngIf="!submitted"> -->
+    <div class="form-group">
+        <h3 class="text-muted">Gebäude</h3>
+        <input type="text" style="width:30%" class="form-control" id="buildingName" [(ngModel)]="buildingData.buildingName" required name="buildingName" />
+    </div>
+
+    <div class="form-group">
+        <h3 class="text-muted">Ansprechpartner</h3>
+        <input type="text" style="width:30%" class="form-control" id="contactPerson" [(ngModel)]="buildingData.contactPerson" required name="contactPerson" />
+    </div>
+
+    <div class="form-group">
+        <h3 class="text-muted">Adresse</h3>
+        <input type="text" style="width:30%" class="form-control" id="adresse" [(ngModel)]="buildingData.adresse" required name="adresse" />
+    </div>
+
+    <div class="form-group">
+        <h3 class="text-muted">Grundriss</h3>
+        <input type="file" (change)="onFileChanged($event)" #fileInput>
+        <button (click)="fileInput.click()">Select File</button>
+        <button (click)="onUpload()">Upload!</button>
+    </div>
+
+
+    <button (click)="saveBuilding()" class="btn btn-success btn-lg">Hinzufügen</button>
+</div>
+
+
+
+
+<!-- <div *ngIf="buttonCheck">
+    <h2><br>Kunde wurde erfolgreich hinzugefügt</h2>
+    <button (click)="releaseInputs()" class="btn btn-secondary btn-lg mr-1">Neuen Kunden hinzufügen</button>
+    <button routerLink="/costumers" class="btn btn-primary btn-lg">Startseite</button>
+</div> -->

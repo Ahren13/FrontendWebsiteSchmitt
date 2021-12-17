@@ -1,0 +1,14 @@
+.input-group {
+    padding-top: 3%;
+}
+
+.list-group {
+    max-height: 600px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.btn-fix-size {
+    width: 276px !important;
+}
