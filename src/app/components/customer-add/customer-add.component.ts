@@ -23,6 +23,7 @@ export class CustomerAddComponent implements OnInit {
 
   buttonCheck = false;
   disabled = false; 
+  noInput = false;
  /*  public customerName: string;
   public customerBillingAddress: string;
   public customerContactPerson: string;
@@ -38,6 +39,9 @@ export class CustomerAddComponent implements OnInit {
   }
 
   saveCustomer() {
+
+    console.log(this.buttonCheck);
+    console.log(this.disabled);
     const data = {
       name: this.customer.name,
       billingAddress: this.customer.billingAddress,
@@ -56,9 +60,18 @@ export class CustomerAddComponent implements OnInit {
         },
         error => {
           console.log(error);
-        });
-        this.buttonCheck = true;
+          this.noInput = true;
+        },
+        () => {
+          this.buttonCheck = true;
         this.disabled = true;
+        this.noInput = false;
+         console.log("complete"); 
+        }
+        );
+        
+        console.log(this.buttonCheck);
+        console.log(this.disabled);
   }
 
   releaseInputs(){
