@@ -7,6 +7,7 @@ import { CustomerDetailComponent } from './components/customer-detail/customer-d
 import { DoorsAddComponent } from './components/doors-add/doors-add.component';
 import { UpdateCustomerComponent } from './components/update-customer/update-customer.component';
 import { BuildingAddComponent } from './components/building-add/building-add.component';
+import { UpdateCustomerDetailComponent } from './components/update-customer-detail/update-customer-detail.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'contract-for-app', component: ContractForAppComponent },
   { path: 'door-add/:id/:bid/:cid', component: DoorsAddComponent },
   { path: 'update-customer/:id', component: UpdateCustomerComponent },
-  { path: 'building-add/:id/:bid', component: BuildingAddComponent}
+  { path: 'building-add/:id/:bid', component: BuildingAddComponent },
+  { path: 'update-customer-detail/:id/:bid', component: UpdateCustomerDetailComponent }
 ];
 
 @NgModule({
