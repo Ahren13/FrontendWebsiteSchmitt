@@ -11,6 +11,9 @@ export class DoorsAddComponent implements OnInit {
 
   currentCustomer = null;
 
+  id1: any;
+  id2: any;
+
   doorData = {
     year: '',
     number: '',
@@ -39,7 +42,11 @@ export class DoorsAddComponent implements OnInit {
       .subscribe(
         data => {
           this.currentCustomer = data;
-          
+          this.id1 = this.route.snapshot.params['bid'];
+          this.id2 = this.route.snapshot.params['cid'];
+          console.log("id1 ---------------------------->" + this.id1);
+          console.log("id2 ---------------------------->" + this.id2);
+
           console.log(data);
         },
         error => {
@@ -63,7 +70,7 @@ export class DoorsAddComponent implements OnInit {
     console.log(dataDoor);
     console.log(this.currentCustomer);
 
-    this.CustomerService.createDoor(this.currentCustomer._id, this.currentCustomer.kundenDetails[0]._id, this.currentCustomer.kundenDetails[0].buildings[0]._id ,dataDoor)
+    this.CustomerService.createDoor(this.currentCustomer._id, this.id1, this.id2 ,dataDoor)
       .subscribe(
         response => {
           console.log(response);

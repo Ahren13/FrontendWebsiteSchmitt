@@ -10,9 +10,13 @@ import { CustomerService } from 'src/app/services/customer.service';
 export class BuildingAddComponent implements OnInit {
   selectedFile: any;
 
-  public href: string = "";
+  /* public href: string = ""; */
 
   currentCustomer = null;
+
+  id1;
+  buttonCheck = false;
+  disabled = false;
 
   buildingData = {
     buildingName : '',
@@ -27,8 +31,8 @@ export class BuildingAddComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.href = this.router.url;
-        console.log(this.router.url);
+    /* this.href = this.router.url;
+        console.log(this.router.url); */
         this.getCustomer(this.route.snapshot.paramMap.get('id'));
   }
 
@@ -37,6 +41,8 @@ export class BuildingAddComponent implements OnInit {
       .subscribe(
         data => {
           this.currentCustomer = data;
+          this.id1 = this.route.snapshot.params['bid'];
+          console.log(this.id1);
           
           console.log(data);
         },
@@ -63,9 +69,8 @@ export class BuildingAddComponent implements OnInit {
     };
 
     console.log(dataBuilding);
-    console.log(this.currentCustomer.kundenDetails[0]._id);
 
-    this.CustomerService.createBuilding(this.currentCustomer._id, this.currentCustomer.kundenDetails[0]._id, dataBuilding)
+    this.CustomerService.createBuilding(this.currentCustomer._id, this.id1, dataBuilding)
       .subscribe(
         response => {
           console.log(response);
@@ -73,8 +78,18 @@ export class BuildingAddComponent implements OnInit {
         error => {
           console.log(error);
         });
+        this.buttonCheck = true;
+        this.disabled = true;
+  }
 
-
+  releaseInputs(){
+    this.disabled = false;
+    this.buttonCheck = false;
+    this.buildingData = {
+      buildingName: '',
+      adresse: '',
+      contactPerson: ''
+    };
   }
 
 

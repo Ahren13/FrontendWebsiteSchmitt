@@ -64,6 +64,11 @@ export class CustomerService {
     return this.http.post(`${baseUrl}/${id}/customersDetail/${bid}/building`, data)
   }
 
+  //###########################Delete Building###########################
+  deleteBuilding(id, bid, cid){
+    return this.http.delete(`${baseUrl}/${id}/customersDetail/${bid}/building/${cid}`)
+  }
+
   //###########################Create Door###########################
   createDoor(id, bid, cid, data){
     return this.http.post(`${baseUrl}/${id}/customersDetail/${bid}/building/${cid}/door`, data)

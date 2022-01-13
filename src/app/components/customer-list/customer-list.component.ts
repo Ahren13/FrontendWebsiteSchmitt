@@ -54,9 +54,11 @@ export class CustomerListComponent implements OnInit {
   }
 
   refreshList() {
-    this.retrieveCustomers();
-    this.currentCustomer = null;
-    this.currentIndex = -1;
+
+
+    window.location.reload();
+
+
   }
 
   retriveDetails(customer, index){
@@ -181,6 +183,43 @@ export class CustomerListComponent implements OnInit {
     console.log(i);
     this.currentDoor = door;
     this.currentIndex2= i;
+  }
+
+  deleteCustomerdetails() {
+    
+    this.customerService.deleteCustomersDetail(this.currentCustomer._id, this.currentCustomerDetail._id)
+    .subscribe(
+      response => {
+        
+        console.log(response)
+      
+               
+      },
+      error => {
+        console.log(error);
+      });
+      this.refreshList();
+     /* this.currentCustomer = customer;
+     this.currentIndex = index;
+     this.customerDetails = this.currentCustomer.kundenDetails
+ */
+
+
+    //this.customerService.deleteCustomersDetail()
+  }
+  deleteBuilding() {
+    this.customerService.deleteBuilding(this.currentCustomer._id, this.currentCustomerDetail._id, this.currentBuilding._id)
+    .subscribe(
+      response => {
+        
+        console.log(response)
+      
+               
+      },
+      error => {
+        console.log(error);
+      });
+      this.refreshList();
   }
 }
 
