@@ -1,18 +1,22 @@
+<div *ngIf="currentCustomer && currentDetails" class="edit-form">
+
+    <h1 class="display-3">Gebäude</h1>
+
+    <div class="form-group">
+        <h2>Standort:
+            <small class="text-muted"> {{ currentDetails.location }}</small>
+        </h2>
+        <h2>Ansprechpartner:
+            <small class="text-muted"> {{ currentDetails.contactPerson }}</small>
+        </h2>
+    </div>
+
 <div class="submit-form">
+    
     <!--  <div *ngIf="!submitted"> -->
     <div class="form-group">
         <h3 class="text-muted">Gebäude</h3>
         <input [attr.disabled]="disabled ? '' : null" type="text" style="width:30%" class="form-control" id="buildingName" [(ngModel)]="buildingData.buildingName" required name="buildingName" />
-    </div>
-
-    <div class="form-group">
-        <h3 class="text-muted">Ansprechpartner</h3>
-        <input [attr.disabled]="disabled ? '' : null" type="text" style="width:30%" class="form-control" id="contactPerson" [(ngModel)]="buildingData.contactPerson" required name="contactPerson" />
-    </div>
-
-    <div class="form-group">
-        <h3 class="text-muted">Adresse</h3>
-        <input [attr.disabled]="disabled ? '' : null" type="text" style="width:30%" class="form-control" id="adresse" [(ngModel)]="buildingData.adresse" required name="adresse" />
     </div>
 
     <div class="form-group">
@@ -24,6 +28,7 @@
 
 
     <button [attr.disabled]="disabled ? '' : null" (click)="saveBuilding()" class="btn btn-success btn-lg">Hinzufügen</button>
+</div>
 </div>
 
 <div *ngIf="buttonCheck">

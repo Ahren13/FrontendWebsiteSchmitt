@@ -13,15 +13,14 @@ export class BuildingAddComponent implements OnInit {
   /* public href: string = ""; */
 
   currentCustomer = null;
+  currentDetails = null;
 
   id1;
   buttonCheck = false;
   disabled = false;
 
   buildingData = {
-    buildingName : '',
-    adresse : '',
-    contactPerson : ''
+    buildingName : ''
   }
 
   constructor(
@@ -45,6 +44,18 @@ export class BuildingAddComponent implements OnInit {
           console.log(this.id1);
           
           console.log(data);
+
+          for(let i = 0; i < this.currentCustomer.kundenDetails.length; i++) {
+            if(this.currentCustomer.kundenDetails[i]._id == this.id1){
+              this.currentDetails = this.currentCustomer.kundenDetails[i];
+              console.log(this.currentDetails);
+              console.log(this.currentDetails.location);
+            }
+            else{
+              continue;
+            }
+          }
+
         },
         error => {
           console.log(error);
@@ -63,9 +74,7 @@ export class BuildingAddComponent implements OnInit {
   saveBuilding(){
      
     const dataBuilding = {
-      buildingName : this.buildingData.buildingName,
-      adresse: this.buildingData.adresse,
-      contactPerson : this.buildingData.contactPerson
+      buildingName : this.buildingData.buildingName
     };
 
     console.log(dataBuilding);
@@ -86,9 +95,7 @@ export class BuildingAddComponent implements OnInit {
     this.disabled = false;
     this.buttonCheck = false;
     this.buildingData = {
-      buildingName: '',
-      adresse: '',
-      contactPerson: ''
+      buildingName: ''
     };
   }
 

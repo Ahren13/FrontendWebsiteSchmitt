@@ -151,14 +151,14 @@
         <div *ngIf="currentDoor">
             <h1 class="text-muted">Tür</h1>
             <div>
-                <label><strong>Nummer:</strong></label> {{ currentDoor.number }}
+                <label><strong>TürNummer:</strong></label> {{ currentDoor.number }}
             </div>
             <div>
-                <label><strong>Jahr:</strong></label> {{ currentDoor.year }}
+                <label><strong>Hinweis:</strong></label> {{ currentDoor.hint }}
             </div>
 
             <div>
-                <label><strong>NKTIP:</strong></label> {{ currentDoor.nktip }}
+                <label><strong>Funktion:</strong></label> {{ currentDoor.function }}
             </div>
             <div>
                 <label><strong>TYP:</strong></label> {{ currentDoor.typ }}
@@ -167,7 +167,16 @@
                 <label><strong>DIN:</strong></label> {{ currentDoor.din }}
             </div>
             <div>
-                <label><strong>Hinweis:</strong></label> {{ currentDoor.hint }}
+                <label><strong>Liferanten AB:</strong></label> {{ currentDoor.supplierab }}
+            </div>
+            <div>
+                <label><strong>Alte Projektnummer:</strong></label> {{ currentDoor.projectNbOld }}
+            </div>
+            <div>
+                <label><strong>Liferanten AB Position:</strong></label> {{ currentDoor.supplierabPos }}
+            </div>
+            <div>
+                <label><strong>Erstwartungsjahr:</strong></label> {{ currentDoor.yearFirstCheck }}
             </div>
             <button class="m-2 btn btn-lg btn-warning btn-fix-size">
                 Tür bearbeiten

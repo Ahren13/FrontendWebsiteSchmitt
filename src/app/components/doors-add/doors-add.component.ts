@@ -15,12 +15,15 @@ export class DoorsAddComponent implements OnInit {
   id2: any;
 
   doorData = {
-    year: '',
     number: '',
     hint: '',
-    nktip: '',
+    function: '',
     typ: '',
-    din: ''
+    din: '',
+    supplierab: '',
+    projectNbOld: '',
+    supplierabPos: '',
+    yearFirstCheck: ''
   };
 
   buttonCheck = false;
@@ -57,14 +60,15 @@ export class DoorsAddComponent implements OnInit {
   saveDoor(){
      
     const dataDoor = {
-      year : this.doorData.year,
       number: this.doorData.number,
-      hint : this.doorData.hint,
-      nktip : this.doorData.nktip,
-      typ : this.doorData.typ,
-      din : this.doorData.din,
-
-
+      hint: this.doorData.hint,
+      function: this.doorData.hint,
+      typ: this.doorData.typ,
+      din: this.doorData.din,
+      supplierab: this.doorData.supplierab,
+      projectNbOld: this.doorData.projectNbOld,
+      supplierabPos: this.doorData.supplierabPos,
+      yearFirstCheck: this.doorData.yearFirstCheck
     };
 
     console.log(dataDoor);
@@ -87,12 +91,15 @@ export class DoorsAddComponent implements OnInit {
     this.disabled = false;
     this.buttonCheck = false;
     this.doorData = {
-      year: '',
       number: '',
       hint: '',
-      nktip: '',
+      function: '',
       typ: '',
-      din: ''
+      din: '',
+      supplierab: '',
+      projectNbOld: '',
+      supplierabPos: '',
+      yearFirstCheck: ''
     };
   }
 
