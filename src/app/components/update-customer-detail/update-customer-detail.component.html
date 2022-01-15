@@ -33,6 +33,7 @@
         <div class="form-group">
             <h3 class="text-muted">Wartungsvertrag</h3>
             <select [attr.disabled]="disabled ? '' : null" class="form-select" type="text" class="form-control" id="maintenanceContract" [(ngModel)]="currentDetails.maintenanceContract" name="maintenanceContract" aria-label="Default select example">
+                
                 <option value="true">Ja</option>
                 <option value="false">Nein</option>
               </select>
@@ -49,11 +50,6 @@
             <h3 class="text-muted">KalenderWoche</h3>
             <input [attr.disabled]="disabled ? '' : null" type="text" class="form-control" id="calendarWeek" [(ngModel)]="currentDetails.calendarWeek" name="calendarWeek" />
         </div>
-        <div class="form-group">
-            <h3 class="text-muted">Fremdwartungsgebäude</h3>
-            <input [attr.disabled]="disabled ? '' : null" type="text" class="form-control" id="exterMaintenanceBusiness" [(ngModel)]="currentDetails.exterMaintenanceBusiness" name="title" />
-        </div>
-
         <div class="form-group">
             <h3 class="text-muted">Notizfeld</h3>
             <input [attr.disabled]="disabled ? '' : null" type="text" class="form-control" id="noteField" [(ngModel)]="currentDetails.noteField" name="noteField" />

@@ -91,7 +91,6 @@ export class UpdateCustomerDetailComponent implements OnInit {
         "maintenanceContract":  this.currentDetails.maintenanceContract,
         "maintenanceInterval": this.currentDetails.maintenanceInterval,
         "calendarWeek": this.currentDetails.calendarWeek,
-        "exterMaintenanceBusiness": this.currentDetails.exterMaintenanceBusiness,
         "noteField": this.currentDetails.noteField
       };
   

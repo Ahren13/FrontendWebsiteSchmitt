@@ -7,6 +7,5 @@
                 maintenanceInterval: String;
                 calendarWeek: Number;
                 building: String[];
-                exterMaintenanceBusiness: String;
                 noteField: String;
 }

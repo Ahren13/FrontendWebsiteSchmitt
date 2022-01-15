@@ -24,7 +24,6 @@ export class CustomerDetailComponent implements OnInit {
     maintenanceInterval: '',
     calendarWeek: '',
     building: [],
-    exterMaintenanceBusiness: '',
     noteField: ''
   };
 
@@ -67,12 +66,15 @@ export class CustomerDetailComponent implements OnInit {
   
   
   
-
-  yesButton(){
+//###########################Yes and No button not necessary anymore cause it switched to form select###########################
+  /* yesButton(){
     this.customerDetail.maintenanceContract = true;
     console.log(this.customerDetail.maintenanceContract);
     return this.customerDetail.maintenanceContract;
+    
+    
   }
+  
 
   noButton(){
     
@@ -80,7 +82,7 @@ export class CustomerDetailComponent implements OnInit {
     console.log("maintenanceContract->>>>>> " + this.customerDetail.maintenanceContract);
     return this.customerDetail.maintenanceContract;
   }
-
+ */
   /* updatePublished(status) {
     const data = {
       name: this.currentCustomer.name,
@@ -109,7 +111,6 @@ export class CustomerDetailComponent implements OnInit {
       maintenanceInterval: this.customerDetail.maintenanceInterval,
       calendarWeek: this.customerDetail.calendarWeek,
       building: this.customerDetail.building,
-      exterMaintenanceBusiness: this.customerDetail.exterMaintenanceBusiness,
       noteField: this.customerDetail.noteField
     };
 
@@ -178,7 +179,6 @@ export class CustomerDetailComponent implements OnInit {
       maintenanceInterval: '',
       calendarWeek: '',
       building: [],
-      exterMaintenanceBusiness: '',
       noteField: ''
     };
   }
