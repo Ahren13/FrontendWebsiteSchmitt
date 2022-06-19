@@ -56,22 +56,24 @@ export class CustomerAddComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          
         },
         error => {
           console.log(error);
           this.noInput = true;
         },
         () => {
-          this.buttonCheck = true;
+        this.buttonCheck = true;
         this.disabled = true;
         this.noInput = false;
          console.log("complete"); 
-        }
-        );
+         
+        });
         
-        console.log(this.buttonCheck);
-        console.log(this.disabled);
+        //Kommt vor subscribe,error & () und macht deswegen wenig Sinn!!!
+        /* console.log("buttoncheck ->" + this.buttonCheck);
+        console.log("disabled ->" + this.disabled);
+        console.log("Input ->" + this.noInput);
+        console.log("ich bin am Ende"); */
   }
 
   releaseInputs(){

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from 'src/app/services/customer.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import {NgbDateParserFormatter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-customer-detail',
@@ -33,6 +34,8 @@ export class CustomerDetailComponent implements OnInit {
 
   buttonCheck = false;
   disabled = false;
+  noInput = false;
+  model: NgbDateStruct;
 
   
   
@@ -41,7 +44,9 @@ export class CustomerDetailComponent implements OnInit {
 
   constructor(private CustomerService: CustomerService,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private parserFormatter: NgbDateParserFormatter
+              ) { }
               
 
   ngOnInit(): void {
@@ -101,7 +106,10 @@ export class CustomerDetailComponent implements OnInit {
   } */
 
   saveCustomerDetail(){
-     
+
+  this.customerDetail.calendarWeek = this.parserFormatter.format(this.model);
+    
+
     const dataDetail = {
       location: this.customerDetail.location,
       contactPerson: this.customerDetail.contactPerson,
@@ -110,24 +118,29 @@ export class CustomerDetailComponent implements OnInit {
       maintenanceContract: this.customerDetail.maintenanceContract,
       maintenanceInterval: this.customerDetail.maintenanceInterval,
       calendarWeek: this.customerDetail.calendarWeek,
-      building: this.customerDetail.building,
       noteField: this.customerDetail.noteField
     };
 
-    this.CustomerService.createCustomersDetail(this.currentCustomer._id, dataDetail)
+    this.CustomerService.createCustomersDetail(this.currentCustomer._id, dataDetail, )
       .subscribe(
         response => {
           console.log(response);
+          console.log("ok, lets go");
         },
         error => {
           console.log(error);
-        });
-
+          console.log("we not finished");
+          this.noInput = true
+        },
+        () => {
         this.buttonCheck = true;
         this.disabled = true;
+        this.noInput = false;
+        console.log("complete"); 
+        });
   }
 
-  updateCustomer() {
+  /* updateCustomer() {
     this.CustomerService.update(this.currentCustomer._id, this.currentCustomer)
       .subscribe(
         response => {
@@ -137,9 +150,9 @@ export class CustomerDetailComponent implements OnInit {
         error => {
           console.log(error);
         });
-  }
+  } */
 
-  deleteCustomer() {
+  /* deleteCustomer() {
     this.CustomerService.delete(this.currentCustomer.id)
       .subscribe(
         response => {
@@ -149,23 +162,23 @@ export class CustomerDetailComponent implements OnInit {
         error => {
           console.log(error);
         });
-  }
+  } */
 
-  addBuilding(build){
-    /* const i = this.currentCustomer.customerDetail.building.length
+  /* addBuilding(build){
+    const i = this.currentCustomer.customerDetail.building.length
     baba = this.currentCustomer.customerDetail.building[i+1] */
-    /* console.log(build); */
+    /* console.log(build);
     this.customerDetail.building.push(build);
     console.log(this.customerDetail.building); 
     
-  }
+  } */
 
-  addCourse() {
+  /* addCourse() {
     this.buildingList.push(this.building);
     console.log(this.buildingList);
     this.building = '';
 
-  }
+  } */
 
   releaseInputs(){
     this.disabled = false;

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer.service';
 
 
+
 @Component({
   selector: 'app-update-customer-detail',
   templateUrl: './update-customer-detail.component.html',
@@ -20,7 +21,7 @@ export class UpdateCustomerDetailComponent implements OnInit {
   constructor(
     private CustomerService: CustomerService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {
     
    }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../../services/customer.model';
 import { CustomerService } from 'src/app/services/customer.service';
+import { CustomerDetail } from 'src/app/services/customerDetail.model';
+
 
 @Component({
   selector: 'app-customer-list',
@@ -32,6 +34,8 @@ export class CustomerListComponent implements OnInit {
   doors = null;
 
   detailID = null;
+
+  mystring = '';
   
 
   constructor(private customerService: CustomerService) { }
@@ -47,6 +51,7 @@ export class CustomerListComponent implements OnInit {
         data => {
           this.customers = data;
           console.log(data);
+          
         },
         error => {
           console.log(error);
@@ -66,10 +71,12 @@ export class CustomerListComponent implements OnInit {
     this.currentCustomer = customer;
     this.currentIndex = index;
     this.customerDetails = this.currentCustomer.kundenDetails
-    //console.log(this.currentCustomer);
-    /*console.log(this.customerDetails);
-    console.log(this.currentIndex);
-    console.log("testa"); */
+    
+    
+    /* console.log(this.currentCustomer);
+    console.log(this.customerDetails);
+    console.log("index" +this.currentIndex);
+    console.log("testa");  */
   }
 
   searchName() {
@@ -90,8 +97,10 @@ export class CustomerListComponent implements OnInit {
     this.currentIndexDetail = i;
     this.buildings = this.currentCustomerDetail.buildings;
     this.detailID = this.currentCustomerDetail._id;
-    console.log(this.detailID)
-    
+    this.mystring = this.currentCustomerDetail.calendarWeek.slice(0, 10)
+
+    console.log(this.detailID);
+    console.log(this.mystring);
   }
 
 

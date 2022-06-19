@@ -46,7 +46,7 @@ export class CustomerService {
 
   //###########################Create Customerdetail###########################
   createCustomersDetail(id, data){
-    return this.http.post(`${baseUrl}/${id}/customersDetail`, data)
+    return this.http.post(`${baseUrl}/${id}/customersDetail`, data, {responseType: 'text'})
   }
 
   //###########################Delete Customerdetail###########################
