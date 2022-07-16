@@ -3,42 +3,42 @@
     <div class="form-group">
         <h3 class="text-muted">Kunde</h3>
         <input [attr.disabled]="disabled ? '' : null" type="text" style="width:30%" class="form-control" id="name" required minlength="1" [(ngModel)]="customer.name" #name="ngModel" />
-            <div *ngIf = "name.invalid && noInput">
-                 <small id="nameHelp" class="form-text text-muted">Bitte geben Sie einen Kunden ein.</small>
-            </div>    
+        <div *ngIf="name.invalid && noInput">
+            <small id="nameHelp" class="form-text text-muted">Bitte geben Sie einen Kunden ein.</small>
+        </div>
     </div>
 
 
     <div class="form-group">
         <h3 class="text-muted">Rechnungsadresse</h3>
-        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="billingAddress" required minlength="1" [(ngModel)]="customer.billingAddress"  #billingAddress="ngModel" />
-        <div *ngIf = "billingAddress.invalid && noInput">
+        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="billingAddress" required minlength="1" [(ngModel)]="customer.billingAddress" #billingAddress="ngModel" />
+        <div *ngIf="billingAddress.invalid && noInput">
             <small id="addressHelp" class="form-text text-muted">Bitte geben Sie eine Rechnungsadresse an.</small>
-                </div>
+        </div>
     </div>
 
     <div class="form-group">
         <h3 class="text-muted">Ansprechpartner für Rechnung</h3>
-        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="billContactPerson" required minlength="1" [(ngModel)]="customer.contactPerson"  #contactPerson="ngModel" />
-        <div *ngIf = "contactPerson.invalid && noInput">
+        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="billContactPerson" required minlength="1" [(ngModel)]="customer.contactPerson" #contactPerson="ngModel" />
+        <div *ngIf="contactPerson.invalid && noInput">
             <small id="contactPersonHelp" class="form-text text-muted">Bitte geben Sie den Ansprechpartner an.</small>
-                </div>
+        </div>
     </div>
 
     <div class="form-group">
         <h3 class="text-muted">Ansprechpartner Email</h3>
-        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="emailContactPerson" required minlength="1" [(ngModel)]="customer.email"  #email="ngModel" />
-        <div *ngIf = "email.invalid && noInput">
+        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="emailContactPerson" required minlength="1" [(ngModel)]="customer.email" #email="ngModel" />
+        <div *ngIf="email.invalid && noInput">
             <small id="emailHelp" class="form-text text-muted">Bitte geben Sie die Emailadresse des Ansprechpartners an.</small>
-                </div>
+        </div>
     </div>
 
     <div class="form-group">
         <h3 class="text-muted">Ansprechpartner Handynummer</h3>
-        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="numberContactPerson" required minlength="1" [(ngModel)]="customer.mobileNumber"  #mobileNumber="ngModel" />
-        <div *ngIf = "mobileNumber.invalid && noInput">
+        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="numberContactPerson" required minlength="1" [(ngModel)]="customer.mobileNumber" #mobileNumber="ngModel" />
+        <div *ngIf="mobileNumber.invalid && noInput">
             <small id="emailHelp" class="form-text text-muted">Bitte geben Sie die Nummer des Ansprechpartners an.</small>
-                </div>
+        </div>
     </div>
 
     <button [attr.disabled]="disabled ? '' : null" (click)="saveCustomer()" class="btn btn-success btn-lg">Hinzufügen</button>

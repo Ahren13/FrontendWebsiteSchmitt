@@ -22,7 +22,7 @@ export class CustomerDetailComponent implements OnInit {
     contactPersonEmail: '',
     contactPersonMobile: '',
     maintenanceContract: false,
-    maintenanceInterval: '',
+    maintenanceInterval: 'halbjährlich',
     calendarWeek: '',
     building: [],
     noteField: ''
@@ -35,7 +35,12 @@ export class CustomerDetailComponent implements OnInit {
   buttonCheck = false;
   disabled = false;
   noInput = false;
-  model: NgbDateStruct;
+  model: NgbDateStruct = {
+    year:2022,
+    month:1,
+    day:1,
+  };
+  
 
   
   
@@ -189,7 +194,7 @@ export class CustomerDetailComponent implements OnInit {
       contactPersonEmail: '',
       contactPersonMobile: '',
       maintenanceContract: false,
-      maintenanceInterval: '',
+      maintenanceInterval: 'halbjährlich',
       calendarWeek: '',
       building: [],
       noteField: ''
