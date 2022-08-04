@@ -8,7 +8,7 @@ import { DoorsAddComponent } from './components/doors-add/doors-add.component';
 import { UpdateCustomerComponent } from './components/update-customer/update-customer.component';
 import { BuildingAddComponent } from './components/building-add/building-add.component';
 import { UpdateCustomerDetailComponent } from './components/update-customer-detail/update-customer-detail.component';
-
+import { GroundPlanComponent } from './components/ground-plan/ground-plan.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'costumers', pathMatch: 'full'},
@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'door-add/:id/:bid/:cid', component: DoorsAddComponent },
   { path: 'update-customer/:id', component: UpdateCustomerComponent },
   { path: 'building-add/:id/:bid', component: BuildingAddComponent },
-  { path: 'update-customer-detail/:id/:bid', component: UpdateCustomerDetailComponent }
+  { path: 'update-customer-detail/:id/:bid', component: UpdateCustomerDetailComponent },
+  { path: 'ground-plan-add/:id/:bid/:cid', component: GroundPlanComponent }
 ];
 
 @NgModule({

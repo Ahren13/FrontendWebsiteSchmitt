@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateCustomerComponent } from './components/update-customer/update-customer.component';
 import { BuildingAddComponent } from './components/building-add/building-add.component';
 import { UpdateCustomerDetailComponent } from './components/update-customer-detail/update-customer-detail.component';
+import { GroundPlanComponent } from './components/ground-plan/ground-plan.component';
+
 
 
 
@@ -32,7 +34,8 @@ import { UpdateCustomerDetailComponent } from './components/update-customer-deta
     DoorsAddComponent,
     UpdateCustomerComponent,
     BuildingAddComponent,
-    UpdateCustomerDetailComponent
+    UpdateCustomerDetailComponent,
+    GroundPlanComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { UpdateCustomerDetailComponent } from './components/update-customer-deta
     NgbModule,
     FormsModule,
     HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

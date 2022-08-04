@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http'; 
+import { HttpClient, HttpRequest, HttpEvent} from '@angular/common/http'; 
+import { Observable } from 'rxjs';
 
 const baseUrl = 'http://localhost:8080/api/customers';
 
@@ -73,8 +74,24 @@ export class CustomerService {
   createDoor(id, bid, cid, data){
     return this.http.post(`${baseUrl}/${id}/customersDetail/${bid}/building/${cid}/door`, data)
   }
-  
 
+  //###########################upload Image###########################
+  upload(id, bid, cid, file: File): Observable<HttpEvent<any>> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    const req = new HttpRequest('POST', `${baseUrl}/${id}/customersDetail/${bid}/building/${cid}/files/upload`, formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+    return this.http.request(req);
+  }
+  getFiles(): Observable<any> {
+    return this.http.get(`${baseUrl}/files`);
+  }
+
+  downloadFile(id, bid, cid, name){
+    return this.http.get(`${baseUrl}/${id}/customersDetail/${bid}/building/${cid}/files/download/${name}`)
+  }
   
 
 

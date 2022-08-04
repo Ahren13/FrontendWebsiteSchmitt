@@ -126,7 +126,7 @@
                 <button class="m-2 btn btn-lg btn-success btn-fix-size" routerLink="/door-add/{{ currentCustomer._id }}/{{ currentCustomerDetail._id }}/{{ currentBuilding._id }}"> 
         Türen hinzufügen
     </button>
-                <button class="m-2 btn btn-lg btn-warning btn-fix-size">
+                <button class="m-2 btn btn-lg btn-warning btn-fix-size" routerLink="/ground-plan-add/{{ currentCustomer._id }}/{{ currentCustomerDetail._id }}/{{ currentBuilding._id }}">
         Grundrisse anschauen
     </button>
                 <button class="m-2 btn btn-lg btn-danger btn-fix-size" (click)="deleteBuilding()">

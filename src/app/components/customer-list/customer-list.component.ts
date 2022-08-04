@@ -67,7 +67,6 @@ export class CustomerListComponent implements OnInit {
   }
 
   retriveDetails(customer, index){
-    
     this.currentCustomer = customer;
     this.currentIndex = index;
     this.customerDetails = this.currentCustomer.kundenDetails

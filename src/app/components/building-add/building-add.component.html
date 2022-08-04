@@ -11,24 +11,37 @@
         </h2>
     </div>
 
-<div class="submit-form">
-    
-    <!--  <div *ngIf="!submitted"> -->
-    <div class="form-group">
-        <h3 class="text-muted">Gebäude</h3>
-        <input [attr.disabled]="disabled ? '' : null" type="text" style="width:30%" class="form-control" id="buildingName" [(ngModel)]="buildingData.buildingName" required name="buildingName" />
+    <div class="submit-form">
+
+        <!--  <div *ngIf="!submitted"> -->
+        <div class="form-group">
+            <h3 class="text-muted">Gebäude</h3>
+            <input [attr.disabled]="disabled ? '' : null" type="text" style="width:30%" class="form-control" id="buildingName" [(ngModel)]="buildingData.buildingName" required name="buildingName" />
+        </div>
+
+        <!-- <div class="form-group">
+            <h3 class="text-muted">Grundriss</h3>
+            <input [attr.disabled]="disabled ? '' : null" type="file" (change)="onFileChanged($event)" #fileInput>
+            <button [attr.disabled]="disabled ? '' : null" (click)="fileInput.click()">Select File</button>
+            <button [attr.disabled]="disabled ? '' : null" (click)="onUpload()">Upload!</button>
+        </div> -->
+        <div class="row">
+            <div class="col-8">
+                <label class="btn btn-default p-0">
+                <input type="file" (change)="selectFile($event)" />
+              </label>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload()">
+                Upload
+              </button>
+            </div>
+        </div>
+
+
+
+        <button [attr.disabled]="disabled ? '' : null" (click)="saveBuilding()" class="btn btn-success btn-lg">Hinzufügen</button>
     </div>
-
-    <div class="form-group">
-        <h3 class="text-muted">Grundriss</h3>
-        <input  [attr.disabled]="disabled ? '' : null" type="file" (change)="onFileChanged($event)" #fileInput>
-        <button [attr.disabled]="disabled ? '' : null" (click)="fileInput.click()">Select File</button>
-        <button  [attr.disabled]="disabled ? '' : null" (click)="onUpload()">Upload!</button>
-    </div>
-
-
-    <button [attr.disabled]="disabled ? '' : null" (click)="saveBuilding()" class="btn btn-success btn-lg">Hinzufügen</button>
-</div>
 </div>
 
 <div *ngIf="buttonCheck">
@@ -37,7 +50,7 @@
     <button routerLink="/costumers" class="btn btn-primary btn-lg">Startseite</button>
 </div>
 
-
+<button [attr.disabled]="disabled ? '' : null" (click)="openPdf()" class="btn btn-success btn-lg">test</button>
 
 
 <!-- <div *ngIf="buttonCheck">
