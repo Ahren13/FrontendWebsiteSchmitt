@@ -14,7 +14,11 @@
         <h1 class="text-muted">Kundenliste</h1>
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let customer of customers; let i = index" [class.active]="i == currentIndex" (click)="retriveDetails(customer, i)">
-                {{ customer.name }}
+                <div *ngIf="customer.completed == false;else other_content" style="color: red">
+                    {{ customer.name }}
+                </div>
+                <ng-template #other_content style="color: green">{{ customer.name }}</ng-template>
+
             </li>
         </ul>
     </div>
@@ -56,7 +60,10 @@
             <h1 class="text-muted">Standort</h1>
             <ul class="list-group">
                 <li class="list-group-item" *ngFor="let customerdet of customerDetails; let i = index" [class.active]="i == currentIndexDetail" (click)="retriveBuildings(customerdet, i)">
-                    {{ customerdet.location }}
+                    <div *ngIf="customerdet.completed == false;else other_content" style="color: red">
+                        {{ customerdet.location }}
+                    </div>
+                    <ng-template #other_content style="color: green">{{ customerdet.location }}</ng-template>
                 </li>
             </ul>
         </div>
@@ -114,7 +121,11 @@
             <h1 class="text-muted">Gebäude</h1>
             <ul class="list-group">
                 <li class="list-group-item" *ngFor="let building of buildings; let i = index" [class.active]="i == currentIndex1" (click)="retrieveDoors(building, i)">
-                    {{ building.buildingName }}
+                    <div *ngIf="building.completed == false;else other_content" style="color: red">
+                        {{ building.buildingName }}
+                    </div>
+                    <ng-template #other_content style="color: green">{{ building.buildingName }}</ng-template>
+
                 </li>
             </ul>
         </div>
@@ -141,7 +152,11 @@
             <h1 class="text-muted">Türen</h1>
             <ul class="list-group">
                 <li class="list-group-item" *ngFor="let door of doors; let i = index" [class.active]="i == currentIndex2" (click)="check(door, i)">
-                    {{ door.number }}
+                    <div *ngIf="door.completed == false;else other_content" style="color: red">
+                        {{ door.number }}
+                    </div>
+                    <ng-template #other_content style="color: green">{{ door.number }}</ng-template>
+
                 </li>
             </ul>
         </div>

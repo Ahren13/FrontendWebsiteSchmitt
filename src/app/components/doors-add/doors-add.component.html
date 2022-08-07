@@ -14,7 +14,14 @@
 
     <div class="form-group">
         <h3 class="text-muted">Funktion</h3>
-        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="function" [(ngModel)]="doorData.function" required name="function" />
+        <select [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="function" [(ngModel)]="doorData.function" required name="function">
+            <option value="T0">T0</option>
+            <option value="FR">FR</option>
+            <option value="NR">NR</option>
+            <option value="RS">RS</option>
+            <option value="Ei-30-RS">Ei-30-RS</option>
+            <option value="EI-90-RS">EI-90-RS</option>
+          </select>
     </div>
 
     <div class="form-group">
@@ -24,8 +31,14 @@
 
     <div class="form-group">
         <h3 class="text-muted">DIN</h3>
-        <input [attr.disabled]="disabled ? '' : null" class="form-control" style="width:30%" id="din" [(ngModel)]="doorData.din" required name="din" />
+        <select [attr.disabled]="disabled ? '' : null" class="form-control" type="text" style="width:30%" id="din" [(ngModel)]="doorData.din" required name="din">
+            <option value="L">L</option>
+            <option value="R">R</option>
+            <option value="L-S">L-S</option>
+            <option value="R-S">R-S</option>
+          </select>
     </div>
+
 
     <div class="form-group">
         <h3 class="text-muted">Liferanten AB</h3>

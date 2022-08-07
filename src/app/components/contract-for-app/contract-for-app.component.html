@@ -1,25 +1,16 @@
-<div class="list row">
-    <div class="col-md-8">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search by name" [(ngModel)]="name" />
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" (click)="searchName()">
-            Suche
-          </button>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <h4>Kundenliste</h4>
+<div class="row d-flex justify-content-center mt-5">
+
+    <div class="col-md-4">
+        <h4 class="text-center">Kundenliste</h4>
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let customer of customers; let i = index" [class.active]="i == currentIndex" (click)="setActiveCustomer(customer, i)">
                 {{ customer.name }}
             </li>
         </ul>
 
-
     </div>
-    <div class="col-md-6">
+
+    <div class="col-md-3">
         <div *ngIf="currentCustomer">
             <h4>Kunde</h4>
             <div>
@@ -37,13 +28,45 @@
             <div>
                 <label><strong>Ansprechpartner Handynummer:</strong></label> {{ currentCustomer.mobileNumber }}
             </div>
-
-            <a class="m-3 btn btn-sm btn-success">
+            <button class="m-3 btn btn-sm btn-success" (click)="contractForApp()">
                 Auftrag für App freigeben
-              </a>
-
-
-
+            </button>
         </div>
 
+    </div>
+
+
+
+</div>
+
+<!-- <div class="row d-flex justify-content-center mt-5">
+    <div class="col-md-8">
+        <h4 class="text-center">Auftrag für App</h4>
+        <ul class="list-group">
+            <div *ngIf="customerforApp" class="edit-form"> -->
+<!-- <li class="list-group-item" *ngFor="let customer of customers; let i = index" [class.active]="i == currentIndex" (click)="setActiveCustomer(customer, i)"> -->
+<!-- <li class="list-group-item">
+                    {{ customerforApp.name }}
+
+                </li>
+            </div>
+        </ul>
+    </div>
+</div> -->
+
+<div *ngIf="customerforApp" class="edit-form">
+
+    <h1 class="display-3 d-flex justify-content-center mt-5 ">Laufender Auftrag für App</h1>
+
+    <div class="form-group">
+        <h2>Kunde:
+            <small class="text-muted"> {{ customerforApp.name }}</small>
+        </h2>
+        <!-- <h2>Ansprechpartner:
+            <small class="text-muted"> {{ currentDetails.contactPerson }}</small>
+        </h2> -->
+        <h5 class="display-3 d-flex justify-content-center mt-5 ">Hier müsst Ihr mir noch sagen was hier alles dastehen soll. Das ist der laufende Auftrag für die App. Möglichkeiten hierfür wären alle Details zu dem Auftrag anzeigen, alles was schon korrekt von dem Auftrag bearbeitet wurde oder alles was noch
+            fehlt, um den Auftrag als Vollständig abzuschließen
+            <small class="text-muted"> </small>
+        </h5>
     </div>

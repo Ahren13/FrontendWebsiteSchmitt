@@ -62,7 +62,7 @@ export class DoorsAddComponent implements OnInit {
     const dataDoor = {
       number: this.doorData.number,
       hint: this.doorData.hint,
-      function: this.doorData.hint,
+      function: this.doorData.function,
       typ: this.doorData.typ,
       din: this.doorData.din,
       supplierab: this.doorData.supplierab,
