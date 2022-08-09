@@ -75,6 +75,10 @@ export class CustomerService {
     return this.http.post(`${baseUrl}/${id}/customersDetail/${bid}/building/${cid}/door`, data)
   }
 
+  deleteDoor(id, bid, cid, did){
+    return this.http.delete(`${baseUrl}/${id}/customersDetail/${bid}/building/${cid}/door/${did}`)
+  }
+
   //###########################upload Image###########################
   upload(id, bid, cid, file: File): Observable<HttpEvent<any>> {
     const formData: FormData = new FormData();

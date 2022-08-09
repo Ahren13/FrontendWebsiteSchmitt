@@ -229,6 +229,21 @@ export class CustomerListComponent implements OnInit {
       });
       this.refreshList();
   }
+
+  deleteDoor() {
+    this.customerService.deleteDoor(this.currentCustomer._id, this.currentCustomerDetail._id, this.currentBuilding._id, this.currentDoor._id)
+    .subscribe(
+      response => {
+        
+        console.log(response)
+      
+               
+      },
+      error => {
+        console.log(error);
+      });
+      this.refreshList();
+  }
 }
 
 

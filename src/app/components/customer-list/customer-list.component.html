@@ -138,7 +138,7 @@
         Türen hinzufügen
     </button>
                 <button class="m-2 btn btn-lg btn-warning btn-fix-size" routerLink="/ground-plan-add/{{ currentCustomer._id }}/{{ currentCustomerDetail._id }}/{{ currentBuilding._id }}">
-        Grundrisse anschauen
+        Grundrisse
     </button>
                 <button class="m-2 btn btn-lg btn-danger btn-fix-size" (click)="deleteBuilding()">
     Löschen
@@ -193,10 +193,10 @@
             <div>
                 <label><strong>Erstwartungsjahr:</strong></label> {{ currentDoor.yearFirstCheck }}
             </div>
-            <button class="m-2 btn btn-lg btn-warning btn-fix-size">
+            <!-- <button class="m-2 btn btn-lg btn-warning btn-fix-size">
                 Tür bearbeiten
-            </button>
-            <button class="m-2 btn btn-lg btn-danger btn-fix-size">
+            </button> -->
+            <button class="m-2 btn btn-lg btn-danger btn-fix-size" (click)="deleteDoor()">
             Löschen
           </button>
         </div>
